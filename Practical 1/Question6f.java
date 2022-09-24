@@ -32,6 +32,8 @@ class Question6f {
         
         diff = sumEven - sumOdd;
         
+        System.out.println("The sum of all Even Digits: "+sumEven);
+        System.out.println("The sum of all Odd Digits: "+sumOdd);
         System.out.println("The difference is: "+diff);
         in.close();
     }
