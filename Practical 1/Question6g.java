@@ -26,10 +26,10 @@ class Question6g {
         dm3 = m / 10 % 10;
         dm4 = m % 10;
 
-        sum += dn1 %2 == 0 ? dn1 * dm1 : 0;
-        sum += dn2 %2 == 0 ? dn2 * dm2 : 0;
-        sum += dn3 %2 == 0 ? dn3 * dm3 : 0;
-        sum += dn4 %2 == 0 ? dn4 * dm4 : 0;
+        sum += (dn1 %2 == 0) && (dm1 %2 != 0) ? dn1 * dm1 : 0;
+        sum += (dn2 %2 == 0) && (dm2 %2 != 0) ? dn2 * dm2 : 0;
+        sum += (dn3 %2 == 0) && (dm3 %2 != 0) ? dn3 * dm3 : 0;
+        sum += (dn4 %2 == 0) && (dm4 %2 != 0) ? dn4 * dm4 : 0;
 
         System.out.println("The sum value is: "+sum);
         in.close();
