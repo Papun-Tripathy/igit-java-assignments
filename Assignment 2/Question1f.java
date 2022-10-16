@@ -5,7 +5,8 @@ class Question1f {
 
         Scanner in = new Scanner(System.in);
 
-        int num, k, temp;
+        long num, temp;
+        int k, length;
         String choice;
 
         System.out.print("Enter the number: ");
@@ -14,23 +15,30 @@ class Question1f {
         choice = in.next();
         System.out.print("Enter the position: ");
         k = in.nextInt();
-        if (String.valueOf(num).length() < k) {
+
+        temp = num;
+        length = 0;
+        while (temp != 0) {
+            length++;
+            temp /= 10;
+        }
+        if (length < k) {
             System.out.println("Index is out of range!!");
             System.exit(0);
         }
         temp = num;
 
-        int positionValue = 1, placeValue = 0;
+        long positionValue = 1, placeValue = 0;
 
         switch (choice.toLowerCase()) {
             case "f":
             case "front":
 
-                positionValue = 1;
+                positionValue = 0;
                 placeValue = 0;
 
                 for (int count = 1; count <= k; count++) {
-                    positionValue *= 10;
+                    positionValue = positionValue == 0 ? 1 : positionValue * 10;
                     placeValue = temp % 10;
                     temp /= 10;
                 }
@@ -43,7 +51,7 @@ class Question1f {
             case "b":
             case "back":
 
-                int t = num;
+                long t = num;
                 temp = 0;
                 positionValue = 1;
 
