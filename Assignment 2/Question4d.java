@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Question4b {
+class Question4d {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
@@ -13,17 +13,28 @@ class Question4b {
         n = in.nextInt();
 
         result = x;
-        for (int i = 3; i <= n; i = i + 2) {
+        for (int i = 2; i <= n; i++) {
 
+            boolean isNotPrime = false;
             long factorialValue = 1;
             long xToPowerValue = 1;
 
-            for (int num = 1; num <= i; num++) {
-                factorialValue *= num;
+            for (int j = 1; j <= i; j++) {
+
+                if (j != 1 && j != i && i % j == 0) {
+                    isNotPrime = true;
+                }
+
+                factorialValue *= j;
                 xToPowerValue *= x;
+            }
+            if (isNotPrime) {
+                count++;
+                continue;
             }
 
             double calculation = (double) xToPowerValue / factorialValue;
+
             result = count % 2 == 0 ? result + calculation : result - calculation;
             count++;
         }

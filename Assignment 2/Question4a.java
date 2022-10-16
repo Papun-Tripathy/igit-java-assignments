@@ -14,18 +14,21 @@ class Question4a {
         n = in.nextInt();
 
         for (int i = 2; i <= n; i++) {
-            int xToPower = 1;
-            long factvalue = 1;
-            for (int num = 1; num <= i; i++) {
-                factvalue *= num;
-            }
-            for (int p = 0; p < i; p++)
-                xToPower *= x;
 
-            value = i % 2 == 0 ? (value - (xToPower / factvalue)) : (value + (xToPower / factvalue));
+            long xToPower = 1;
+            long factvalue = 1;
+
+            for (int num = 1; num <= i; num++) {
+                factvalue *= num;
+                xToPower *= x;
+            }
+            
+            double calculation = (double) xToPower / factvalue;
+            value = i % 2 == 0 ? value - calculation : value + calculation;
         }
 
         System.out.println("The value is: " + value);
 
+        in.close();
     }
 }

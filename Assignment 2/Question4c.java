@@ -4,7 +4,7 @@ class Question4c {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        int x, n, count = 1;
+        int x, n;
         double result;
 
         System.out.print("Enter the value of x: ");
@@ -22,8 +22,8 @@ class Question4c {
             for (int j = 1; j <= i; j++)
                 xToPowerValue *= x;
             double calculation = (double) xToPowerValue / factorialValue;
-            result = count % 2 == 0 ? result + calculation : result - calculation;
-            count++;
+            result = result + calculation;
+            
         }
 
         System.out.println("The result of the series: " + result);
