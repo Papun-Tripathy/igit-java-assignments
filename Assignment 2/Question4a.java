@@ -22,7 +22,6 @@ class Question4a {
                 factvalue *= num;
                 xToPower *= x;
             }
-            
             double calculation = (double) xToPower / factvalue;
             value = i % 2 == 0 ? value - calculation : value + calculation;
         }
