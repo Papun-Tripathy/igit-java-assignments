@@ -28,8 +28,10 @@ class Question6 {
         if (x == 0)
             isPrime = true;
 
-        System.out.println("The number " + num + " is " + (isPrime ? "a prime" : "not a prime") + " and "
-                + (isPallendrum ? "pallendrum" : "not a pallendrum"));
+        if (isPrime && isPallendrum)
+            System.out.println("The number " + num + " is pallendrum and prime number");
+        else
+            System.out.println("The number " + num + " is not a pallendrum and prime number");
 
         in.close();
     }

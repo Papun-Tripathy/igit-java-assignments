@@ -13,7 +13,7 @@ class Question4d {
         n = in.nextInt();
 
         result = x;
-        for (int i = 2; i <= n; i++) {
+        for (int i = 3; i <= n; i++) {
 
             boolean isNotPrime = false;
             long factorialValue = 1;
