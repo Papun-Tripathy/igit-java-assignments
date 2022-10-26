@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Question11i {
+class Question11j {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int size;
@@ -21,24 +21,30 @@ class Question11i {
                     arr[i] = arr[j];
                     arr[j] = temp;
                 }
-                
-        System.out.println("First 5 largest even numbers are: ");
-        int count = 0;
-        for (int i = 0; i < arr.length && count != 5; i++) {
+
+        int n1 = 0, n2 = 0, count = 0, sum = 0;
+        for (int i = size - 1; i > 0 && count < 2; i--) {
             if (arr[i] % 2 == 0) {
                 count++;
-                System.out.print(arr[i] + ", ");
+                n1 = arr[i];
             }
         }
-        System.out.println();
-        System.out.println("First 5 smallest odd numbers are: ");
         count = 0;
-        for (int i = 0; i < arr.length && count != 5; i++) {
+        for (int i = 0; i < size && count < 3; i++) {
             if (arr[i] % 2 != 0) {
                 count++;
-                System.out.print(arr[i] + ", ");
+                n2 = arr[i];
             }
         }
-        in.close();
+
+        while (n1 > 0 || n2 > 0) {
+            int d1, d2;
+            d1 = n1 % 10;
+            d2 = n2 % 10;
+            sum += (d1 * d2);
+            n1 /= 10;
+            n2 /= 10;
+        }
+        System.out.println("the result is: "+sum);
     }
 }
